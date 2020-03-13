@@ -1,8 +1,9 @@
 {
   "name": "Calulator",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/TheBasicOwl/Cal-React.git",
-  "author": "Mads bruun Jensen <madsj812@gmail.com>",
+  "workspaces" : ["calapp", "Front", "CalulatorLib"],
+  "author": "Mads bruun Jensen",
+  "private": true,
   "license": "MIT"
 }

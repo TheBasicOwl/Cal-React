@@ -1,0 +1,10 @@
+{
+  "name": "@Cal/CalulatorLib",
+  "version": "1.0.0",
+  "main": "src/Cal.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^13.9.1",
+    "typescript": "^3.8.3"
+  }
+}
