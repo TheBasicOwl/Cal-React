@@ -74,7 +74,6 @@ function addItem(text) {
     if (text.includes("(")) {
         text = text.substring(1, text.length - 1);
     }
-    console.log(text);
     res.push(text);
 }
 function replaceRange(s, start, end, substitute) {

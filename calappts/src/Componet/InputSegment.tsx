@@ -1,4 +1,4 @@
-import React, { useRef, Component, InputHTMLAttributes } from "react";
+import React, { Component } from "react";
 import { CalcInput } from '@cal/calulatorlib';
 
 interface Props {
@@ -6,9 +6,9 @@ interface Props {
 }
 
 export class InputSegment extends Component<Props, {}> {
-	handleSubmit(e: React.FormEvent) {
-		console.log(CalcInput("2+2"))
+	handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
+		this.props.OnResultChange(CalcInput("2+2*2"));
 	};
 
 	render() {

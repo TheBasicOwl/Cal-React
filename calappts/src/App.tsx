@@ -1,15 +1,22 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 
 import { InputSegment } from './Componet/InputSegment';
 
 type AppState = {
-  result: Array<string>
+  math: string[]
 }
 
 
 class App extends Component<{}, AppState> {
-  OnResultChange(result: Array<string>) {
-   console.log(result); 
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      math: []
+    }
+  }
+  OnResultChange(result: string[]) {
+    console.log(result);
+    this.setState({math: result});
   }
 
   render(){
