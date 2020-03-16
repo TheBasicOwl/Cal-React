@@ -1,12 +1,12 @@
-var res: Array<string> = new Array();
+var res: string[] = [];
 var r = "";
 var fc = 0;
 var fs = 0;
 
-module.exports = function CalcInput(input: string): string[] {
+export function CalcInput(input: string): string[] {
     r = input.split(' ').join('');
     if(r == "" && r == null) {
-        return;    
+        return []; 
     }
     
     r = `(${r})`;
@@ -15,7 +15,7 @@ module.exports = function CalcInput(input: string): string[] {
         addItem("Error: Characters is not allowed");
         return res;
     }
-    if(r.match(/\(/g).length != r.match(/\)/g).length) {
+    if(r.match(/\(/g)?.length != r.match(/\)/g)?.length) {
         addItem("Error: Brackets is not even");
         return res;
     }
@@ -43,16 +43,16 @@ module.exports = function CalcInput(input: string): string[] {
 function Calulate(input: string): string {
     let test: string[] = input.split(/([\^*\/+-])/);
 
-    test = Calc('^', test,function (a, b) { return Math.pow(parseFloat(a),parseFloat(b)); });
-    test = Calc('*', test,function (a, b) { return parseFloat(a) * parseFloat(b); });
-    test = Calc('/', test,function (a, b) { return parseFloat(a) / parseFloat(b); });
-    test = Calc('+', test,function (a, b) { return parseFloat(a) + parseFloat(b); });
-    test = Calc('-', test,function (a, b) { return parseFloat(a) - parseFloat(b); });
+    test = Calc('^', test,function (a: any, b: any) { return Math.pow(parseFloat(a),parseFloat(b)); });
+    test = Calc('*', test,function (a: any, b: any) { return parseFloat(a) * parseFloat(b); });
+    test = Calc('/', test,function (a: any, b: any) { return parseFloat(a) / parseFloat(b); });
+    test = Calc('+', test,function (a: any, b: any) { return parseFloat(a) + parseFloat(b); });
+    test = Calc('-', test,function (a: any, b: any) { return parseFloat(a) - parseFloat(b); });
 
     if(test.length == 1) {
         return test.toString();
     } else {
-        return null;
+        return "";
     }
 }
 
@@ -82,6 +82,6 @@ function addItem(text: string) {
     res.push(text);
 }
 
-function replaceRange(s, start, end, substitute) {
+function replaceRange(s: string, start: number, end: number, substitute: string) {
     return s.substring(0, start) + substitute + s.substring(end);
 }

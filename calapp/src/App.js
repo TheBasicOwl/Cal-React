@@ -1,16 +1,16 @@
 import React from 'react';
-
+const Cal = require('@Cal/CalulatorLib')
 
 class App extends React.Component {
   handletest(text) {
-    console.log("App:" + text);
+    console.log(text);
   }
   
   render() {
     return (
       <div>
-      <InputSection OnSetTest={this.handletest}></InputSection>
-    </div>
+        <InputSection OnSetTest={this.handletest}></InputSection>
+      </div>
     );
   }
 }
@@ -22,7 +22,8 @@ class InputSection extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.OnSetTest(this.state.test);
+    var cals = Cal(this.target.test);
+    this.props.OnSetTest(cals);
   };
   
   change = e => {
