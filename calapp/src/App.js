@@ -1,30 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function App() {
-  return (
-    <div>
-      <InputSection></InputSection>
+class App extends React.Component {
+  handletest(text) {
+    console.log("App:" + text);
+  }
+  
+  render() {
+    return (
+      <div>
+      <InputSection OnSetTest={this.handletest}></InputSection>
     </div>
-  );
+    );
+  }
 }
 
 class InputSection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {text: ""};
-  }
+  state = {
+    test: ""
+  };
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.OnSetTest(this.state.test);
+  };
+  
+  change = e => {
+   console.log(e.target.name);
+   this.setState({
+     [e.target.name]: e.target.value
+   })
+  };
 
   render() {
     return ( 
       <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={e => this.setState({text: e.target.value})}/>
+        <input type="text" 
+          name="test"
+          value={this.state.text} 
+          onChange={e => this.change(e)}
+        />
         <button>Submit</button>
-        <br/>{this.state.text}
       </form>
     )
   } 
