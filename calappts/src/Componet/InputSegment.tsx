@@ -5,16 +5,31 @@ interface Props {
     OnResultChange: (result: Array<string>) => void
 }
 
-export class InputSegment extends Component<Props, {}> {
+interface State {
+	input: string;
+}
+
+export class InputSegment extends Component<Props, State> {
+	constructor(props: any) {
+		super(props);
+		this.state = {
+			input: ""
+		};
+	}
 	handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		this.props.OnResultChange(CalcInput("2+2*2"));
+		this.props.OnResultChange(CalcInput(this.state.input));
 	};
 
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<input name="inputSubmit"/>
+				<input 
+				name="inputSubmit"
+				placeholder="input..."
+				value={this.state.input}
+				onChange={( ev: React.ChangeEvent<HTMLInputElement>,): void => this.setState({input: ev.target.value})}
+				/>
 				<button type="submit">Calculate</button> 
 			</form>
 	);}

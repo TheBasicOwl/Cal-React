@@ -22,8 +22,8 @@ class App extends Component<{}, AppState> {
         <div> 
           <InputSegment OnResultChange={this.OnResultChange}/>
           <ul>
-            {this.state.math.map((m) => 
-              <p>{m}</p>
+            {this.state.math.map((m, i) => 
+              <ul key={i}>{m}</ul>
             )}
           </ul>
         </div>
