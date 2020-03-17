@@ -6,16 +6,14 @@ type AppState = {
   math: string[]
 }
 
-
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      math: []
-    }
+
+    this.state = { math: [] }; 
   }
-  OnResultChange(result: string[]) {
-    console.log(result);
+
+  OnResultChange = (result: string[]) => {
     this.setState({math: result});
   }
 
@@ -23,6 +21,11 @@ class App extends Component<{}, AppState> {
       return( 
         <div> 
           <InputSegment OnResultChange={this.OnResultChange}/>
+          <ul>
+            {this.state.math.map((m) => 
+              <p>{m}</p>
+            )}
+          </ul>
         </div>
       )
   };
