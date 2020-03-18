@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { CalcInput } from '@cal/calulatorlib';
 
 interface Props {
-    OnResultChange: (result: Array<string>) => void
+	OnResultChange: (result: Array<string>) => void
 }
 
 interface State {
@@ -18,6 +18,7 @@ export class InputSegment extends Component<Props, State> {
 	}
 	handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
+		console.log("submit: " + this.state.input);
 		this.props.OnResultChange(CalcInput(this.state.input));
 	};
 

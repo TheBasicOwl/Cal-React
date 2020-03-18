@@ -4,6 +4,8 @@ var fc = 0;
 var fs = 0;
 
 export function CalcInput(input: string): string[] {
+    res = [];
+    
     r = input.split(' ').join('');
     if(r == "" && r == null) {
         return []; 

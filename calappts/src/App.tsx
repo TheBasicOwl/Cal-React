@@ -1,11 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import { InputSegment } from './Componet/InputSegment';
 
-type AppState = {
-  math: string[]
+const App: React.FC = () => {
+  var [math, setmath] = useState<string[]>([]);
+
+  return (
+    <div> 
+      <InputSegment OnResultChange={e =>{
+          console.log(e);
+          setmath(e);
+        }}/>
+      <ul>
+        {math.map((m, i) => 
+          <ul key={i}>{m}</ul>
+        )}
+      </ul>
+    </div>
+  )
 }
 
+/*
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
@@ -30,5 +45,5 @@ class App extends Component<{}, AppState> {
       )
   };
 }
-
+*/
 export default App;

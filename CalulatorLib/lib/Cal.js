@@ -6,6 +6,7 @@ var fc = 0;
 var fs = 0;
 function CalcInput(input) {
     var _a, _b;
+    res = [];
     r = input.split(' ').join('');
     if (r == "" && r == null) {
         return [];
