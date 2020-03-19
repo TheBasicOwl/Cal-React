@@ -24,14 +24,15 @@ export class InputSegment extends Component<Props, State> {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form className="container" onSubmit={this.handleSubmit}>
 				<input 
+				id="Input"
 				name="inputSubmit"
 				placeholder="input..."
 				value={this.state.input}
 				onChange={( ev: React.ChangeEvent<HTMLInputElement>,): void => this.setState({input: ev.target.value})}
 				/>
-				<button type="submit">Calculate</button> 
+				<button className="CalBtn" type="submit">Calculate</button> 
 			</form>
 	);}
 }

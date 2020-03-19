@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { InputSegment } from './Componet/InputSegment';
 
+import './style.css'
+
 const App: React.FC = () => {
   var [math, setmath] = useState<string[]>([]);
 
@@ -11,9 +13,9 @@ const App: React.FC = () => {
           console.log(e);
           setmath(e);
         }}/>
-      <ul>
+      <ul id="result">
         {math.map((m, i) => 
-          <ul key={i}>{m}</ul>
+          <li key={i}>{m}</li>
         )}
       </ul>
     </div>

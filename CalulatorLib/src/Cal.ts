@@ -5,7 +5,7 @@ var fs = 0;
 
 export function CalcInput(input: string): string[] {
     res = [];
-    
+
     r = input.split(' ').join('');
     if(r == "" && r == null) {
         return []; 
@@ -36,9 +36,8 @@ export function CalcInput(input: string): string[] {
     if(r == "Infinity") {
         res = [];
         addItem("Error: Do not divide by 0");
-    } else {
-        addItem(Calulate(r));
-    }
+    } 
+    
     return res;
 }
 

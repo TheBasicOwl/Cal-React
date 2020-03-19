@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+:root {
+    --PrimaryColor: #1b1e2b;
+    --SecondaryColor: #2b3041;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    color: white;
+    font-size: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: var(--PrimaryColor);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+input#Input {
+    background-color: var(--SecondaryColor);
+    border:none;
+    padding: 1em;
+}
+
+button.CalBtn {
+    background-color: #202431;
+    border:none;
+    cursor: pointer;
+}
+
+#result {
+    list-style: none;
+}
+
+#result li{
+    padding: 1em;
+    cursor: text;
+    transition: .5s;
+}
+
+#result li:hover{
+    padding: 1.5em;
+}
+
+#result li:nth-child(even) {
+    background-color: #292d3e;
+}

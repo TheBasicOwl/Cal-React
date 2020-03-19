@@ -33,9 +33,6 @@ function CalcInput(input) {
         res = [];
         addItem("Error: Do not divide by 0");
     }
-    else {
-        addItem(Calulate(r));
-    }
     return res;
 }
 exports.CalcInput = CalcInput;
