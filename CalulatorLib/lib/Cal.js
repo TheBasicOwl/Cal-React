@@ -38,11 +38,13 @@ function CalcInput(input) {
 exports.CalcInput = CalcInput;
 function Calulate(input) {
     let test = input.split(/([\^*\/+-])/);
+    console.log(`Before: ${test}`);
     test = Calc('^', test, function (a, b) { return Math.pow(parseFloat(a), parseFloat(b)); });
     test = Calc('*', test, function (a, b) { return parseFloat(a) * parseFloat(b); });
     test = Calc('/', test, function (a, b) { return parseFloat(a) / parseFloat(b); });
     test = Calc('+', test, function (a, b) { return parseFloat(a) + parseFloat(b); });
     test = Calc('-', test, function (a, b) { return parseFloat(a) - parseFloat(b); });
+    console.log(`After: ${test}`);
     if (test.length == 1) {
         return test.toString();
     }

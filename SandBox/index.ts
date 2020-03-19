@@ -1,3 +1,3 @@
-const Cal = require('@Cal/CalulatorLib')
+import { CalcInput } from '@cal/calulatorlib'
 
-console.log(Cal("2+2"))
+console.log(CalcInput("2+2"))

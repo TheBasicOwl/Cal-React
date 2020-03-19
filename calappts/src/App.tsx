@@ -10,7 +10,6 @@ const App: React.FC = () => {
   return (
     <div> 
       <InputSegment OnResultChange={e =>{
-          console.log(e);
           setmath(e);
         }}/>
       <ul id="result">
