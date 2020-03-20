@@ -18,7 +18,6 @@ export class InputSegment extends Component<Props, State> {
 	}
 	handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-		console.log("submit: " + this.state.input);
 		this.props.OnResultChange(CalcInput(this.state.input));
 	};
 
